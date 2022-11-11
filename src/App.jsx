@@ -36,7 +36,7 @@ function App() {
   return (
     <div>
       <main>
-        <div className="section-title">
+        <div className="section-title text-center">
           <h1>{loading ? "Loading..." : "Followers"}</h1>
           <div className="underline"></div>
         </div>
@@ -47,7 +47,7 @@ function App() {
             })}
           </div>
           {!loading && (
-            <div className="btn-container">
+            <div className="btn-container d-flex justify-content-center">
               <button className="prev-btn" onClick={prevPage}>
                 prev
               </button>
@@ -71,17 +71,18 @@ function App() {
           )}
         </section>
       </main>
-      {!loading &&  <footer className="footer">
-        <a
-          href="https://raziwebdeveloper.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="footer-link"
-        >
-          Developed with ❤ by raziwebdeveloper.com
-        </a>
-      </footer>}
-     
+      {!loading && (
+        <footer className="text-center pb-1">
+          <a
+            href="https://raziwebdeveloper.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-decoration-none text-black"
+          >
+            Developed with ❤ by raziwebdeveloper.com
+          </a>
+        </footer>
+      )}
     </div>
   );
 }

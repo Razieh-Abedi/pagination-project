@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
 
-function Follower({avatar_url, html_url, login}) {
+function Follower({ avatar_url, html_url, login }) {
   return (
-    <article className='card'>
+    <article className="card text-center">
       <img src={avatar_url} alt={login} />
       <h4>{login}</h4>
-      <a href={html_url} className="btn">View Profile</a>
+      <a href={html_url} className="profile-btn text-decoration-none">
+        View Profile
+      </a>
     </article>
-  )
+  );
 }
 
-export default Follower
+export default Follower;
