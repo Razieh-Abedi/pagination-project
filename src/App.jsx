@@ -34,40 +34,55 @@ function App() {
     });
   };
   return (
-    <main>
-      <div className="section-title">
-        <h1>{loading ? "Loading..." : "Followers"}</h1>
-        <div className="underline"></div>
-      </div>
-      <section className="followers">
-        <div className="container">
-          {followers.map((follower) => {
-            return <Follower key={follower.id} {...follower} />;
-          })}
+    <div>
+      <main>
+        <div className="section-title">
+          <h1>{loading ? "Loading..." : "Followers"}</h1>
+          <div className="underline"></div>
         </div>
-        {!loading && (
-          <div className="btn-container">
-            <button className="prev-btn" onClick={prevPage}>
-              prev
-            </button>
-            {data.map((item, index) => {
-              return (
-                <button
-                  key={index}
-                  className={`page-btn ${index === page ? "active-btn" : null}`}
-                  onClick={() => handlePage(index)}
-                >
-                  {index + 1}
-                </button>
-              );
+        <section className="followers">
+          <div className="container">
+            {followers.map((follower) => {
+              return <Follower key={follower.id} {...follower} />;
             })}
-            <button className="next-btn" onClick={nextPage}>
-              next
-            </button>
           </div>
-        )}
-      </section>
-    </main>
+          {!loading && (
+            <div className="btn-container">
+              <button className="prev-btn" onClick={prevPage}>
+                prev
+              </button>
+              {data.map((item, index) => {
+                return (
+                  <button
+                    key={index}
+                    className={`page-btn ${
+                      index === page ? "active-btn" : null
+                    }`}
+                    onClick={() => handlePage(index)}
+                  >
+                    {index + 1}
+                  </button>
+                );
+              })}
+              <button className="next-btn" onClick={nextPage}>
+                next
+              </button>
+            </div>
+          )}
+        </section>
+      </main>
+      {!loading &&  <footer className="footer">
+        <a
+          href="https://raziwebdeveloper.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link"
+        >
+          Developed with ❤ by raziwebdeveloper.com
+        </a>
+      </footer>}
+     
+    </div>
   );
 }
 

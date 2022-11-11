@@ -222,3 +222,11 @@ Pagination
     max-width: 700px;
   }
 }
+.footer {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.footer-link {
+  text-decoration: none;
+  color: black;
+}
